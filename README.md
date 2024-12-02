@@ -13,4 +13,9 @@
 	<img src="https://github.com/user-attachments/assets/b1bcdd1b-b3c4-40f3-baf5-a97377d7001e" width="200" height="200"/>
 	<img src="https://github.com/user-attachments/assets/9f028c40-e486-4040-b3fd-34501cf11137" width="200" height="200"/>
 </p>
-
+<div align="center">
+	
+|   &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp; 🐶 경수혁  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;    |      &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp; 🐱홍석영  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;    |      &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp; 🐹임성재  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;    |     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp; 🐰이재석  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;   | 
+|------------------------------------------|--------------------------------------|------------------------------------------|-----------------------------------|
+ 
+</div>
