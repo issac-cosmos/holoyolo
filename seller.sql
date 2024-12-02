@@ -41,7 +41,7 @@ INSERT INTO seller (name, birth, email, password) VALUES
 ('한지원', '2003-10-25', 'jiwon.han@example.com', 'password123'),
 ('조태희', '2004-07-14', 'taehee.jo@example.com', 'password123');
 
-create table complain complaint(
+create table complain_complaint(
     complaint_id bigint primary key auto_increment,
     consumer_id bigint not null,
     order_detail_id bigint not null,
