@@ -1,12 +1,15 @@
 --주소 테이블 삽입
 CREATE TABLE address (
     address_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    consumer_id BIGINT NOT NULL,
     FOREIGN KEY (consumer_id) REFERENCES consumer(consumer_id),
     address_city VARCHAR(255) NOT NULL,
     address_line1 VARCHAR(255) NOT NULL,
     address_line2 VARCHAR(255) NOT NULL,
     address_type VARCHAR(3000) NOT NULL
 );
+
+alter table address add column consumer_id BIGINT NOT NULL;
 
 -- 데이터 삽입
 INSERT INTO address (consumer_id, address_city, address_line1, address_line2,address_type) VALUES

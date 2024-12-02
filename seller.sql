@@ -9,6 +9,7 @@ CREATE TABLE seller (
 );
 
 
+<<<<<<< HEAD
 INSERT INTO seller (name, phone_number, email, password, quit) VALUES
 ('김민수', '010-1234-5678', 'kimminsu@example.com', 'password123', 'N'),
 ('이철수', '010-2345-6789', 'leechulsoo@example.com', 'password123', 'N'),
@@ -41,4 +42,15 @@ INSERT INTO seller (name, phone_number, email, password, quit) VALUES
 ('한유진', '010-9012-3458', 'hanyujin@example.com', 'password123', 'N'),
 ('이동훈', '010-0123-4569', 'leedonghoon@example.com', 'password123', 'N'),
 ('홍석영', '010-1234-5678', 'tjrdud@naver.com', '1234', 'N');
+=======
+create table complain_complaint(
+    complaint_id bigint primary key auto_increment,
+    consumer_id bigint not null,
+    order_detail_id bigint not null,
+    complaint_contents varchar(3000) not null,
+    created_time datetime default current_timestamp,
+    foreign key(consumer_id) references consumer(consumer_id),
+    foreign key(order_detail_id) references order_detail(order_detail_id)
+);
+>>>>>>> 2009bb667035a38f39e52e0f38c4c8b22da8a714
 
