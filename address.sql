@@ -9,31 +9,50 @@ CREATE TABLE address (
     address_type VARCHAR(3000) NOT NULL
 );
 
-alter table address add column consumer_id BIGINT NOT NULL;
+INSERT INTO address (consumer_id, address_city, address_line1, address_line2, address_type) VALUES
+(1, '서울특별시 강북구', '도봉로 183', '**동 ***호', '부모님 집'),
+(2, '서울특별시 노원구', '한글비석로 212길 10', '**동 ***호', '회사'),
+(3, '서울특별시 성북구', '삼선교로 44', '**동 ***호', '언니네'),
+(4, '서울특별시 강동구', '명일로 161-1', '**동 ***호', '회사'),
+(5, '서울특별시 도봉구', '도봉로 180길 77', '**동 ***호', '집'),
+(6, '서울특별시 강남구', '테헤란로 152', '**동 ***호', '누나네'),
+(7, '서울특별시 강동구', '명일로 161-1', '**동 ***호', '회사'),
+(8, '경기도 포천시', '호국로 201', '**동 ***호', '회사'),
+(9, '강원도 홍천군', '홍천로4길 26', '**동 ***호', '집'),
+(10, '경기도 인천시 미추홀구', '미추홀대로 486-32', '**동 ***호', '집'),
+(11, '강원도 춘천시', '중앙로 135', '**동 ***호', '회사'),
+(12, '서울특별시 강남구', '테헤란로 28', '**동 ***호', '언니네'),
+(13, '경기도 인천시 중구', '서소문로 20', '**동 ***호', '동생네'),
+(14, '경기도 인천시 중구', '서소문로 20', '**동 ***호', '회사'),
+(15, '전라북도 전주시 덕진구', '첨성길 28', '**동 ***호', '부모님 집'),
+(16, '서울특별시 강동구', '명일로 161-1', '**동 ***호', '회사'),
+(17, '서울특별시 성북구', '삼선교로 44', '**동 ***호', '언니네'),
+(18, '경기도 안산시 상록구', '첨성길 28', '**동 ***호', '집'),
+(19, '충청북도 청주시 서원구', '청남로2064번길 90', '**동 ***호', '부모님 집'),
+(20, '충청남도 천안시 서북구', '두정공원2길 23-21', '**동 ***호', '집'),
+(21, '서울특별시 송파구', '가락로 111', '**동 ***호', '집'),
+(22, '경기도 의정부시', '가능로 99', '**동 ***호', '집'),
+(23, '서울특별시 마포구', '월드컵로 82', '**동 ***호', '회사'),
+(24, '서울특별시 강서구', '마곡중앙2로', '**동 ***호', '집'),
+(25, '서울특별시 강서구', '마곡중앙2로', '**동 ***호', '집'),
+(26, '경기도 시흥시', '서해로 324', '**동 ***호', '집'),
+(27, '서울특별시 강남구', '역삼로 151', '**동 ***호', '회사'),
+(28, '경상남도 부산광역시 해운대', '첨성길 28', '**동 ***호', '회사'),
+(29, '경상남도 부산광역시 해운대', '첨성길 28', '**동 ***호', '회사'),
+(30, '충청남도 천안시', '천안로 123', '**동 ***호', '회사'),
+(31, '전라남도 담양군', '첨성길 28', '**동 ***호', '집');
 
--- 데이터 삽입
-INSERT INTO address (consumer_id, address_city, address_line1, address_line2,address_type) VALUES (5, '서울특별시 도봉구', '도봉로 180길 77', '**동 ***호','집');
-INSERT INTO address (consumer_id, address_city, address_line1, address_line2,address_type) VALUES (2, '서울특별시 노원구', '한글비석로 212길 10', '**동 ***호', '회사');
-INSERT INTO address (consumer_id, address_city, address_line1, address_line2,address_type) VALUES (1, '서울특별시 강북구', '도봉로 183', '**동 ***호', '부모님 집');
-INSERT INTO address (consumer_id, address_city, address_line1, address_line2,address_type) VALUES (6, '서울특별시 강남구', '테헤란로 152', '**동 ***호', '누나네');
-INSERT INTO address (consumer_id, address_city, address_line1, address_line2,address_type) VALUES (18, '경기도 안산시 상록구' , '첨성길 28', '**동 ***호','집');
-INSERT INTO address (consumer_id, address_city, address_line1, address_line2,address_type) VALUES (22, '경기도 의정부시', '가능로 99', '**동 ***호','집');
-INSERT INTO address (consumer_id, address_city, address_line1, address_line2,address_type) VALUES (8, '경기도 포천시 ', '호국로 201', '**동 ***호','회사');
-INSERT INTO address (consumer_id, address_city, address_line1, address_line2,address_type) VALUES (8, '경기도 포천시 ', '호국로 201', '**동 ***호','회사');
-INSERT INTO address (consumer_id, address_city, address_line1, address_line2,address_type) VALUES (9, '강원도 홍천군', '홍천로4길 26', '**동 ***호','집');
-INSERT INTO address (consumer_id, address_city, address_line1, address_line2,address_type) VALUES (11, '강원도 춘천시', '중앙로 135', '**동 ***호','회사');
-INSERT INTO address (consumer_id, address_city, address_line1, address_line2,address_type) VALUES (10, '경기도 인천시 미추홀구', '미추홀대로 486-32', '**동 ***호','집');
-INSERT INTO address (consumer_id, address_city, address_line1, address_line2,address_type) VALUES (13, '경기도 인천시 중구', '서소문로 20', '**동 ***호','동생네');
-INSERT INTO address (consumer_id, address_city, address_line1, address_line2,address_type) VALUES (19, '충청북도 청주시 서원구', '청남로2064번길 90', '**동 ***호','부모님 집');
-INSERT INTO address (consumer_id, address_city, address_line1, address_line2,address_type) VALUES (20, '충청남도 천안시 서북구', '두정공원2길 23-21', '**동 ***호','집');
-INSERT INTO address (consumer_id, address_city, address_line1, address_line2,address_type) VALUES (29, '경상남도 부산광역시 해운대', '첨성길 28', '**동 ***호','회사');
-INSERT INTO address (consumer_id, address_city, address_line1, address_line2,address_type) VALUES (15, '전라북도 전주시 덕진구', '첨성길 28', '**동 ***호','부모님 집')
-INSERT INTO address (consumer_id, address_city, address_line1, address_line2,address_type) VALUES (22, '전라남도 담양군', '첨성길 28', '**동 ***호','회사');
-INSERT INTO address (consumer_id, address_city, address_line1, address_line2,address_type) VALUES (25, '서울특별시 강서구', '마곡중앙2로', '**동 ***호','집');
-INSERT INTO address (consumer_id, address_city, address_line1, address_line2,address_type) VALUES (33, '서울특별시 강동구', '명일로 161-1', '**동 ***호','회사');
-INSERT INTO address (consumer_id, address_city, address_line1, address_line2,address_type) VALUES (32, '서울특별시 성북구', '삼선교로 44', '**동 ***호','언니네');
-INSERT INTO address (consumer_id, address_city, address_line1, address_line2,address_type) VALUES (12, '서울특별시 강남구', '테헤란로 28', '**동 ***호','언니네');
-INSERT INTO address (consumer_id, address_city, address_line1, address_line2,address_type) VALUES (25, '서울특별시 강서구', '마곡중앙2로', '**동 ***호','집');
-INSERT INTO address (consumer_id, address_city, address_line1, address_line2,address_type) VALUES (33, '서울특별시 강동구', '명일로 161-1', '**동 ***호','회사');
-INSERT INTO address (consumer_id, address_city, address_line1, address_line2,address_type) VALUES (32, '서울특별시 성북구', '삼선교로 44', '**동 ***호','언니네');
-INSERT INTO address (consumer_id, address_city, address_line1, address_line2,address_type) VALUES (12, '서울특별시 강남구', '테헤란로 28', '**동 ***호','언니네');
+-- 중복값을 포함한 추가 데이터
+INSERT INTO address (consumer_id, address_city, address_line1, address_line2, address_type) VALUES
+(1, '서울특별시 강북구', '도봉로 192', '**동 ***호', '자취집'), 
+(2, '서울특별시 노원구', '한글비석로 210길 5', '**동 ***호', '집'),   
+(3, '서울특별시 성북구', '삼선교로 50', '**동 ***호', '집'),        
+(6, '서울특별시 강남구', '테헤란로 145', '**동 ***호', '자취집'),   
+(9, '강원도 홍천군', '홍천로4길 30', '**동 ***호', '회사'),       
+(10, '경기도 인천시 미추홀구', '미추홀대로 500-15', '**동 ***호', '회사'), 
+(13, '경기도 인천시 중구', '서소문로 50', '**동 ***호', '집'),      
+(16, '서울특별시 강동구', '명일로 170', '**동 ***호', '집'),        
+(19, '충청북도 청주시 서원구', '청남로2064번길 95', '**동 ***호', '부모님 집'), 
+(22, '경기도 의정부시', '가능로 89', '**동 ***호', '회사');         
+
+

@@ -3,7 +3,7 @@ create table order_list(
 order_id bigint auto_increment not null primary key,
 consumer_id bigint not null,
 order_time datetime not null default current_timestamp(),
-cancel enum ('Y','N') not null default 'N'
+cancel enum ('Y','N') not null default 'N',
 foreign key(consumer_id) references consumer(consumer_id)
 );
 
