@@ -132,3 +132,108 @@ begin
     SELECT '승인성공' AS message;
 end
 //DELIMITER ;
+
+-------- 상품단일조회(검색)
+
+DELIMITER //
+CREATE procedure 상품단일조회(
+in input_Pname varchar(255)
+)
+
+begin
+    DECLARE exit HANDLER FOR SQLEXCEPTION
+    BEGIN
+        -- 예외 발생 시 실패 메시지 출력
+        SELECT '검색실패' AS message;
+    END;
+
+    select * from product
+    where product_name like CONCAT('%', inputPname, '%');
+
+end
+//DELIMITER ;
+
+-------- 상품수정
+
+DELIMITER //
+CREATE PROCEDURE 상품수정(
+    IN input_Pid BIGINT,              
+    IN input_Pname VARCHAR(255),      
+    IN input_Price BIGINT,            
+    IN input_Semail VARCHAR(255),    
+    IN input_Pcon VARCHAR(3000), 
+    IN input_Ppic VARCHAR(3000)      
+)
+BEGIN
+    DECLARE exit HANDLER FOR SQLEXCEPTION
+    BEGIN
+
+        SELECT '수정실패' AS message;
+    END;
+
+    DECLARE seller_id BIGINT;
+    
+    SELECT seller_id INTO seller_id
+    FROM seller
+    WHERE email = input_Semail;
+    
+    IF seller_id IS NULL THEN
+        SELECT '판매자 이메일이 존재하지 않습니다.' AS message;
+        LEAVE;
+    END IF;
+    
+    UPDATE product
+    SET product_name = input_Pname, 
+        price = input_Price,
+        product_contents = input_Pcon,
+        picture = input_Ppic
+    WHERE product_id = input_Pid AND seller_id = seller_id;
+
+    SELECT '수정성공' AS message;
+END //
+//DELIMITER ;
+
+
+-------- 게시글 삭제
+
+DELIMITER //
+CREATE procedure 게시글삭제(
+in input_Bid bigint
+)
+
+begin
+    DECLARE exit HANDLER FOR SQLEXCEPTION
+    BEGIN
+        -- 예외 발생 시 실패 메시지 출력
+        SELECT '삭제실패' AS message;
+    END;
+
+    update board 
+    set del = 'Y'
+    where board_id = input_Bid;
+
+    SELECT '삭제성공' AS message;
+end
+//DELIMITER ;
+
+-------- 댓글등록
+
+DELIMITER //
+CREATE procedure 댓글등록(
+in input_Bid bigint,
+in input_Bcon varchar(3000)
+)
+
+begin
+    DECLARE exit HANDLER FOR SQLEXCEPTION
+    BEGIN
+        -- 예외 발생 시 실패 메시지 출력
+        SELECT '댓글등록실패' AS message;
+    END;
+
+    insert into comment(board_id, contents)
+    values(input_Bid, input_Bcon);
+
+    SELECT '댓글등록성공' AS message;
+end
+//DELIMITER ;
