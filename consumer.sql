@@ -6,7 +6,7 @@ phone_number varchar(255) not null,
 email varchar(255) not null,
 password varchar(255) not null,
 created_time datetime not null default current_timestamp(),
-quit enum('Y','N') not null default 'N';
+quit enum('Y','N') not null default 'N'
  );
 
  -- 소비자 데이터 입력
