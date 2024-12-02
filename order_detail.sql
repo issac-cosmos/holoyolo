@@ -1,6 +1,9 @@
 --주문상세 테이블 삽입
 CREATE TABLE order_detail (
     order_detail_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    order_id BIGINT NOT NULL,
+    product_id BIGINT NOT NULL,
+    seller_id BIGINT NOT NULL,
     FOREIGN KEY (order_id) REFERENCES order_list(order_id),
     FOREIGN KEY (product_id) REFERENCES product(product_id),
     FOREIGN KEY (seller_id) REFERENCES seller(seller_id),
