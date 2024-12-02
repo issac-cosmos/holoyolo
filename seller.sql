@@ -2,12 +2,12 @@ create table seller(
     seller_id bigint primary key auto_increment,
     name varchar(255) not null,
     birth varchar(255) not null,
-    email varhar(255) not null,
+    email varchar(255) not null,
     password varchar(255) not null,
     created_time datetime not null default current_timestamp
 );
 
-INSERT INTO seller (name, brith, email, password) VALUES
+INSERT INTO seller (name, birth, email, password) VALUES
 ('김민수', '1990-05-15', 'minsu.kim@example.com', 'password123'),
 ('이영희', '1985-09-30', 'younghee.lee@example.com', 'password123'),
 ('박지훈', '1992-12-22', 'jihun.park@example.com', 'password123'),
