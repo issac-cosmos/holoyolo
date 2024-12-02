@@ -251,6 +251,8 @@ CREATE TABLE board (
     del enum ('Y', 'N') Not Null default 'N'
 );
 
+alter table board add del enum ('Y', 'N') Not Null default 'N';
+
 INSERT INTO board (board_title, board_contents, created_time, product_id, consumer_id, del) VALUES
 ('만족스러운 쌀 구매', '소포장이 정말 편리하고 신선해요. 보관하기 딱 좋습니다!', '2024-01-15 10:30:00', 1, 1,'N'),
 ('신선한 한우!', '고기가 정말 부드럽고 신선합니다. 1인분씩 포장되어 너무 좋아요.', '2024-02-10 14:20:00', 2, 2,'N'),
@@ -317,39 +319,40 @@ board_id bigint not null,
 contents varchar(3000),
 created_time datetime not null default current_timestamp(),
 FOREIGN KEY (board_id) REFERENCES board(board_id),
-del enum ('Y', 'N') Not Null default 'N'
- );
+del enum ('Y', 'N') Not Null default 'N',
+password bigint not null
+);
 
-INSERT INTO comment(board_id, contents,del) VALUES (3, "김치 저는 맛이 없던데요",'N');
-INSERT INTO comment(board_id, contents,del) VALUES (7, "배송이 너무 느려요.",'N');
-INSERT INTO comment(board_id, contents,del) VALUES (1, "이 제품 정말 좋네요!",'N');
-INSERT INTO comment(board_id, contents,del) VALUES (12, "포장 상태가 엉망이었어요.",'N');
-INSERT INTO comment(board_id, contents,del) VALUES (5, "친절한 고객 서비스에 감사드립니다.",'N');
-INSERT INTO comment(board_id, contents,del) VALUES (9, "다시 구매할 의향이 없습니다.",'N');
-INSERT INTO comment(board_id, contents,del) VALUES (4, "색상이 화면과 달라요.",'N');
-INSERT INTO comment(board_id, contents,del) VALUES (14, "사이즈가 딱 맞아요!",'N');
-INSERT INTO comment(board_id, contents,del) VALUES (6, "품질이 기대 이상이에요.",'N');
-INSERT INTO comment(board_id, contents,del) VALUES (11, "제품 설명이 부족합니다.",'N');
-INSERT INTO comment(board_id, contents,del) VALUES (10, "추천합니다!",'N');
-INSERT INTO comment(board_id, contents,del) VALUES (15, "재구매 의향 있어요.",'N');
-INSERT INTO comment(board_id, contents,del) VALUES (8, "사용법이 어려워요.",'N');
-INSERT INTO comment(board_id, contents,del) VALUES (2, "디자인이 마음에 들어요.",'N');
-INSERT INTO comment(board_id, contents,del) VALUES (13, "가격이 조금 비싸요.",'N');
-INSERT INTO comment(board_id, contents,del) VALUES (1, "배송이 빨라서 좋았어요.",'N');
-INSERT INTO comment(board_id, contents,del) VALUES (3, "다른 색상도 있었으면 좋겠어요.",'N');
-INSERT INTO comment(board_id, contents,del) VALUES (7, "반품 절차가 복잡해요.",'N');
-INSERT INTO comment(board_id, contents,del) VALUES (12, "지인에게 추천했어요.",'N');
-INSERT INTO comment(board_id, contents,del) VALUES (5, "포장이 너무 예뻤어요.",'N');
-INSERT INTO comment(board_id, contents,del) VALUES (9, "할인 기간에 사서 좋았어요.",'N');
-INSERT INTO comment(board_id, contents,del) VALUES (4, "사용한 지 오래되지 않았는데 고장났어요.",'N');
-INSERT INTO comment(board_id, contents,del) VALUES (14, "설명서가 너무 복잡해요.",'N');
-INSERT INTO comment(board_id, contents,del) VALUES (6, "고객 서비스가 친절해요.",'N');
-INSERT INTO comment(board_id, contents,del) VALUES (11, "품질 대비 가격이 비싸요.",'N');
-INSERT INTO comment(board_id, contents,del) VALUES (10, "기대했던 것보다 좋아요.",'N');
-INSERT INTO comment(board_id, contents,del) VALUES (15, "배송 상태가 정말 나빴어요.",'N');
-INSERT INTO comment(board_id, contents,del) VALUES (8, "제품이 설명과 달라요.",'N');
-INSERT INTO comment(board_id, contents,del) VALUES (2, "친구들에게 추천했어요.",'N');
-INSERT INTO comment(board_id, contents,del) VALUES (13, "저는 만족스럽지 않아요.",'N');
+INSERT INTO comment(board_id, contents, password) VALUES (3, "김치 저는 맛이 없던데요.", 4725);
+INSERT INTO comment(board_id, contents, password) VALUES (7, "배송이 너무 느려요.", 3198);
+INSERT INTO comment(board_id, contents, password) VALUES (1, "이 제품 정말 좋네요!", 5823);
+INSERT INTO comment(board_id, contents, password) VALUES (12, "포장 상태가 엉망이었어요.", 7812);
+INSERT INTO comment(board_id, contents, password) VALUES (5, "친절한 고객 서비스에 감사드립니다.", 2369);
+INSERT INTO comment(board_id, contents, password) VALUES (9, "다시 구매할 의향이 없습니다.", 8475);
+INSERT INTO comment(board_id, contents, password) VALUES (4, "색상이 화면과 달라요.", 6291);
+INSERT INTO comment(board_id, contents, password) VALUES (14, "사이즈가 딱 맞아요!", 5186);
+INSERT INTO comment(board_id, contents, password) VALUES (6, "품질이 기대 이상이에요.", 9832);
+INSERT INTO comment(board_id, contents, password) VALUES (11, "제품 설명이 부족합니다.", 2034);
+INSERT INTO comment(board_id, contents, password) VALUES (10, "추천합니다!", 1946);
+INSERT INTO comment(board_id, contents, password) VALUES (15, "재구매 의향 있어요.", 5078);
+INSERT INTO comment(board_id, contents, password) VALUES (8, "사용법이 어려워요.", 9503);
+INSERT INTO comment(board_id, contents, password) VALUES (2, "디자인이 마음에 들어요.", 1427);
+INSERT INTO comment(board_id, contents, password) VALUES (13, "가격이 조금 비싸요.", 3589);
+INSERT INTO comment(board_id, contents, password) VALUES (1, "배송이 빨라서 좋았어요.", 2765);
+INSERT INTO comment(board_id, contents, password) VALUES (3, "다른 색상도 있었으면 좋겠어요.", 6821);
+INSERT INTO comment(board_id, contents, password) VALUES (7, "반품 절차가 복잡해요.", 4260);
+INSERT INTO comment(board_id, contents, password) VALUES (12, "지인에게 추천했어요.", 3147);
+INSERT INTO comment(board_id, contents, password) VALUES (5, "포장이 너무 예뻤어요.", 9654);
+INSERT INTO comment(board_id, contents, password) VALUES (9, "할인 기간에 사서 좋았어요.", 8372);
+INSERT INTO comment(board_id, contents, password) VALUES (4, "사용한 지 오래되지 않았는데 고장났어요.", 7398);
+INSERT INTO comment(board_id, contents, password) VALUES (14, "설명서가 너무 복잡해요.", 4591);
+INSERT INTO comment(board_id, contents, password) VALUES (6, "고객 서비스가 친절해요.", 3842);
+INSERT INTO comment(board_id, contents, password) VALUES (11, "품질 대비 가격이 비싸요.", 7054);
+INSERT INTO comment(board_id, contents, password) VALUES (10, "기대했던 것보다 좋아요.", 8209);
+INSERT INTO comment(board_id, contents, password) VALUES (15, "배송 상태가 정말 나빴어요.", 6214);
+INSERT INTO comment(board_id, contents, password) VALUES (8, "제품이 설명과 달라요.", 5298);
+INSERT INTO comment(board_id, contents, password) VALUES (2, "친구들에게 추천했어요.", 6163);
+INSERT INTO comment(board_id, contents, password) VALUES (13, "저는 만족스럽지 않아요.", 9571);
 
 create table complaint(
     complaint_id bigint primary key auto_increment,
@@ -365,7 +368,10 @@ create table complaint(
     foreign key(consumer_id) references consumer(consumer_id),
     del enum ('Y', 'N') Not Null default 'N'
 );
+--del 컬럼 추가
+alter table complaint add column del enum ('Y', 'N') Not Null default 'N';
 
+--complaint 컬럼 수정
   alter table complaint modify column seller_id bigint;
   alter table complaint modify column consumer_id bigint;
 

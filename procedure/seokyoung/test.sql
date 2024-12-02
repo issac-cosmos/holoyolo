@@ -132,3 +132,145 @@ begin
     SELECT '승인성공' AS message;
 end
 //DELIMITER ;
+
+-------- 상품단일조회(검색)
+
+DELIMITER //
+CREATE procedure 상품단일조회(
+in input_Pname varchar(255)
+)
+
+begin
+    DECLARE exit HANDLER FOR SQLEXCEPTION
+    BEGIN
+        -- 예외 발생 시 실패 메시지 출력
+        SELECT '검색실패' AS message;
+    END;
+
+    select * from product
+    where product_name like CONCAT('%', inputPname, '%');
+
+end
+//DELIMITER ;
+
+-------- 상품수정
+
+DELIMITER //
+CREATE procedure 상품수정(
+in input_Pid bigint,
+in input_Pname varchar(255),
+in input_Price bigint,
+in input_Sid bigint,
+in input_Pcon varchar(3000),
+in input_Ppic varchar(3000)
+)
+
+begin
+
+    DECLARE exit HANDLER FOR SQLEXCEPTION
+    BEGIN
+        -- 예외 발생 시 실패 메시지 출력
+        SELECT '수정실패' AS message;
+    END;
+
+    update product 
+    set product_name = input_Pname, 
+        price = input_Price,
+        product_contents = input_Pcon,
+        picture = input_Ppic
+    where product_id = input_Pid and seller_id = input_Sid;
+
+    SELECT '수정성공' AS message;
+end
+//DELIMITER ;
+
+
+-------- 게시글 삭제
+
+DELIMITER //
+CREATE procedure 게시글삭제(
+in input_Bid bigint,
+in input_Cid bigint
+)
+
+begin
+    DECLARE exit HANDLER FOR SQLEXCEPTION
+    BEGIN
+        -- 예외 발생 시 실패 메시지 출력
+        SELECT '삭제실패' AS message;
+    END;
+
+    update board 
+    set del = 'Y'
+    where board_id = input_Bid and consumer_id = input_Cid;
+
+    SELECT '삭제성공' AS message;
+end
+//DELIMITER ;
+
+-------- 댓글등록
+
+DELIMITER //
+CREATE procedure 댓글등록(
+in input_Bid bigint,
+in input_Bcon varchar(3000)
+)
+
+begin
+    DECLARE exit HANDLER FOR SQLEXCEPTION
+    BEGIN
+        -- 예외 발생 시 실패 메시지 출력
+        SELECT '댓글등록실패' AS message;
+    END;
+
+    insert into comment(board_id, contents)
+    values(input_Bid, input_Bcon);
+
+    SELECT '댓글등록성공' AS message;
+end
+//DELIMITER ;
+
+-------- 댓글수정
+
+DELIMITER //
+CREATE procedure 댓글수정(
+in input_Cid bigint,
+in input_Pass bigint,
+in input_Bcon varchar(3000)
+)
+
+begin
+    DECLARE exit HANDLER FOR SQLEXCEPTION
+    BEGIN
+        -- 예외 발생 시 실패 메시지 출력
+        SELECT '댓글수정실패' AS message;
+    END;
+
+    update comment set contents = input_Bcon
+    where comment_id = input_Cid and password = input_Pass;
+
+    SELECT '댓글수정성공' AS message;
+end
+//DELIMITER ;
+
+-------- 댓글삭제
+
+DELIMITER //
+CREATE procedure 댓글삭제(
+in input_Cid bigint,
+in input_Pass bigint
+)
+
+begin
+    DECLARE exit HANDLER FOR SQLEXCEPTION
+    BEGIN
+        -- 예외 발생 시 실패 메시지 출력
+        SELECT '댓글삭제실패' AS message;
+    END;
+
+    update comment set del = 'Y'
+    where comment_id = input_Cid and password = input_Pass;
+
+    SELECT '댓글삭제성공' AS message;
+end
+//DELIMITER ;
