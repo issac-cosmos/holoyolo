@@ -9,7 +9,7 @@ CREATE TABLE product (
     FOREIGN KEY (seller_id) REFERENCES seller(seller_id),
     product_contents VARCHAR(3000) NOT NULL,
     picture VARCHAR(3000) NOT NULL,
-    approve ENUM('y', 'n') NOT NULL DEFAULT 'y',
+    approve ENUM('y', 'n') NOT NULL DEFAULT 'y'
 );
 
 INSERT INTO product (product_name, seller_id, price, product_contents, picture, approve, approve_admin_id) VALUES
