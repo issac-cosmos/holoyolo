@@ -13,7 +13,7 @@
 </p>
 <div align="center">
 	
-|   &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;  🐶 경수혁  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  |    &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 🐱홍석영  &nbsp;&nbsp; &nbsp;&nbsp;;&nbsp;    |   &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  🐹임성재  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; |     &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 🐰이재석  &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  | 
+|   &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;   🐶 경수혁   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  |    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;    🐱홍석영    &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;;&nbsp;&nbsp;    |   &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  🐹임성재  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; |   &nbsp;  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;   🐰이재석  &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  | 
 |----------------------------------------|--------------------------------------|-------------------------------------------|---------------------------------------|
  
 </div>
