@@ -1,7 +1,7 @@
 --주소 테이블 삽입
 CREATE TABLE address (
     address_id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    FOREIGN KEY consumer_id REFERENCES consumer(consumer_id),
+    FOREIGN KEY (consumer_id) REFERENCES consumer(consumer_id),
     address_city VARCHAR(255) NOT NULL,
     address_line1 VARCHAR(255) NOT NULL,
     address_line2 VARCHAR(255) NOT NULL,
