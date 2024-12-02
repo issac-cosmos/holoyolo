@@ -42,9 +42,11 @@ CREATE TABLE board (
     board_contents VARCHAR(3000) NOT NULL,
     created_time DATETIME NOT NULL,
     product_id BIGINT NOT NULL,
-    consumer_id bigint not null,
+    consumer_id BIGINT NOT NULL,
+    comment_id BIGINT NOT NULL,
     FOREIGN KEY (product_id) REFERENCES product(product_id),
-    FOREIGN KEY (consumer_id) REFERENCES consumer(consumer_id)
+    FOREIGN KEY (consumer_id) REFERENCES consumer(consumer_id),
+    FOREIGN KEY (comment_id) REFERENCES comment(comment_id)
 );
 
 -- board 데이터 삽입
