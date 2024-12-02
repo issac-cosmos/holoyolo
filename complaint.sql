@@ -13,7 +13,7 @@ create table complaint(
     foreign key(consumer_id) references consumer(consumer_id)
 );
 
-INSERT INTO complain (order_detail_id, seller_id, consumer_id, division, complaint_contents, answer) VALUES
+INSERT INTO complaint (order_detail_id, seller_id, consumer_id, division, complaint_contents, answer) VALUES
 (10, 1, 30, '상품문의', '상품이 마음에 들지 않아서 교환할 수 있나요?', '상품은 교환이 가능합니다.'),
 (4, 9, 22, '주문취소', '결제 후 10분 내에 취소가 가능한가요?', '주문 취소는 발송 전까지 가능합니다.'),
 (17, 6, 15, '상품문의', '이 상품의 색상 옵션을 확인하고 싶습니다.', '상품 색상 옵션은 상세 페이지에서 확인할 수 있습니다.'),
