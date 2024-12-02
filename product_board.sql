@@ -9,30 +9,31 @@ CREATE TABLE product (
     FOREIGN KEY (seller_id) REFERENCES seller(seller_id),
     product_contents VARCHAR(3000) NOT NULL,
     picture VARCHAR(3000) NOT NULL,
-    approve ENUM('y', 'n') NOT NULL DEFAULT 'y'
+    approve ENUM('y', 'n') NOT NULL DEFAULT 'y',
+    del enum ('Y', 'N') Not Null default 'N'
 );
 
-INSERT INTO product (product_name, seller_id, price, product_contents, picture, approve, approve_admin_id) VALUES
-('1kg 쌀 소포장', 1, 3000, '소량 포장된 신선한 쌀, 1인 가구에 적합', '/images/rice_small.jpg', 'y',3),
-('200g 한우 정육', 2, 15000, '200g 소포장 한우, 신선하고 간편한 요리에 추천', '/images/beef.jpg', 'y',7),
-('1L 우유', 6, 1500, '1L 소포장 신선 우유, 개인 소비에 적합', '/images/milk.jpg', 'y',9),
-('5개입 계란', 10, 2500, '소량 포장된 신선한 계란, 낭비 없는 사용', '/images/eggs.jpg', 'y', 6),
-('소포장 김치 500g', 20, 4000, '신선하고 깔끔한 소량 포장 김치', '/images/kimchi.jpg', 'y',8),
-('혼밥용 된장찌개 양념', 18, 2000, '1인분 간편 된장찌개 양념, 간편한 조리', '/images/doenjang.jpg', 'y',1),
-('250ml 생수', 14, 500, '1회용 생수 병, 캠핑과 여행에도 적합', '/images/water.jpg', 'y',2),
-('1인용 냉동 피자', 22, 7000, '혼밥에 딱 맞는 크기의 냉동 피자', '/images/pizza.jpg', 'y',5),
-('1인용 컵라면', 12, 1200, '혼자 먹기 좋은 소량 컵라면', '/images/cup_ramen.jpg', 'y',4),
-('500g 바나나', 10, 3000, '소량 포장된 신선한 바나나, 1인 가구에 적합', '/images/banana.jpg', 'y',7),
-('200g 닭가슴살', 9, 5000, '헬스와 다이어트에 적합한 소포장 닭가슴살', '/images/chicken_breast.jpg', 'y',6),
-('혼밥용 카레 1인분', 7, 2000, '1인분 간편 레토르트 카레', '/images/curry.jpg', 'y',2),
-('소량 포장 두부', 6, 1500, '요리하기 딱 좋은 소량 포장 두부', '/images/tofu.jpg', 'y',4),
-('혼밥용 스파게티 소스', 5, 3000, '1인분 스파게티 소스, 간편한 요리에 적합', '/images/spaghetti_sauce.jpg', 'y',1),
-('소량 포장 샐러드', 1, 4000, '신선한 소량 포장 샐러드, 건강한 식사', '/images/salad.jpg', 'y',2),
-('혼밥용 삼겹살 200g', 6, 8000, '간단히 구워 먹기 좋은 소량 삼겹살', '/images/samgyeopsal.jpg', 'y',4),
-('혼밥용 소시지 3개', 1, 2500, '1인분 간편 조리 소시지', '/images/sausages.jpg', 'y',6),
-('소량 포장 식빵 4조각', 14, 1500, '혼자서도 낭비 없는 식빵 소량 포장', '/images/bread.jpg', 'y',3),
-('혼밥용 즉석밥 1개', 27, 1500, '전자레인지로 간편하게 조리할 수 있는 즉석밥', '/images/instant_rice.jpg', 'y',2),
-('소량 포장 감자칩', 24, 2000, '혼자서 먹기 좋은 소량 포장 감자칩', '/images/potato_chips.jpg', 'y',5);
+INSERT INTO product (product_name, seller_id, price, product_contents, picture, approve, approve_admin_id, del) VALUES
+('1kg 쌀 소포장', 1, 3000, '소량 포장된 신선한 쌀, 1인 가구에 적합', '/images/rice_small.jpg', 'y',3,'N'),
+('200g 한우 정육', 2, 15000, '200g 소포장 한우, 신선하고 간편한 요리에 추천', '/images/beef.jpg', 'y',7,'N'),
+('1L 우유', 6, 1500, '1L 소포장 신선 우유, 개인 소비에 적합', '/images/milk.jpg', 'y',9,'N'),
+('5개입 계란', 10, 2500, '소량 포장된 신선한 계란, 낭비 없는 사용', '/images/eggs.jpg', 'y', 6,'N'),
+('소포장 김치 500g', 20, 4000, '신선하고 깔끔한 소량 포장 김치', '/images/kimchi.jpg', 'y',8,'N'),
+('혼밥용 된장찌개 양념', 18, 2000, '1인분 간편 된장찌개 양념, 간편한 조리', '/images/doenjang.jpg', 'y',1,'N'),
+('250ml 생수', 14, 500, '1회용 생수 병, 캠핑과 여행에도 적합', '/images/water.jpg', 'y',2,'N'),
+('1인용 냉동 피자', 22, 7000, '혼밥에 딱 맞는 크기의 냉동 피자', '/images/pizza.jpg', 'y',5,'N'),
+('1인용 컵라면', 12, 1200, '혼자 먹기 좋은 소량 컵라면', '/images/cup_ramen.jpg', 'y',4,'N'),
+('500g 바나나', 10, 3000, '소량 포장된 신선한 바나나, 1인 가구에 적합', '/images/banana.jpg', 'y',7,'N'),
+('200g 닭가슴살', 9, 5000, '헬스와 다이어트에 적합한 소포장 닭가슴살', '/images/chicken_breast.jpg', 'y',6,'N'),
+('혼밥용 카레 1인분', 7, 2000, '1인분 간편 레토르트 카레', '/images/curry.jpg', 'y',2,'N'),
+('소량 포장 두부', 6, 1500, '요리하기 딱 좋은 소량 포장 두부', '/images/tofu.jpg', 'y',4,'N'),
+('혼밥용 스파게티 소스', 5, 3000, '1인분 스파게티 소스, 간편한 요리에 적합', '/images/spaghetti_sauce.jpg', 'y',1,'N'),
+('소량 포장 샐러드', 1, 4000, '신선한 소량 포장 샐러드, 건강한 식사', '/images/salad.jpg', 'y',2,'N'),
+('혼밥용 삼겹살 200g', 6, 8000, '간단히 구워 먹기 좋은 소량 삼겹살', '/images/samgyeopsal.jpg', 'y',4,'N'),
+('혼밥용 소시지 3개', 1, 2500, '1인분 간편 조리 소시지', '/images/sausages.jpg', 'y',6,'N'),
+('소량 포장 식빵 4조각', 14, 1500, '혼자서도 낭비 없는 식빵 소량 포장', '/images/bread.jpg', 'y',3,'N'),
+('혼밥용 즉석밥 1개', 27, 1500, '전자레인지로 간편하게 조리할 수 있는 즉석밥', '/images/instant_rice.jpg', 'y',2,'N'),
+('소량 포장 감자칩', 24, 2000, '혼자서 먹기 좋은 소량 포장 감자칩', '/images/potato_chips.jpg', 'y',5,'N');
 
 -----------------------------------------------
 
