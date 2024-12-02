@@ -365,7 +365,10 @@ create table complaint(
     foreign key(consumer_id) references consumer(consumer_id),
     del enum ('Y', 'N') Not Null default 'N'
 );
+--del 컬럼 추가
+alter table complaint add column del enum ('Y', 'N') Not Null default 'N';
 
+--complaint 컬럼 수정
   alter table complaint modify column seller_id bigint;
   alter table complaint modify column consumer_id bigint;
 
