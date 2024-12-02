@@ -29,3 +29,17 @@ INSERT INTO admin (admin_id, name, email, password) VALUES
 (18, 'Grace Hall', 'grace.hall@example.com', 'graceSecure987'),
 (19, 'Henry Adams', 'henry.adams@example.com', 'henryPass456'),
 (20, 'Ivy Wilson', 'ivy.wilson@example.com', 'ivySecure123');
+
+
+INSERT INTO admin (admin_id, name, email, password)
+VALUES
+(21, 'Admin One', 'admin1@example.com', 'password123'),
+(22, 'Admin Two', 'admin2@example.com', 'securepass456'),
+(23, 'Admin Three', 'admin3@example.com', 'adminpassword789'),
+(24, 'Admin Four', 'admin4@example.com', 'mypassword111'),
+(25, 'Admin Five', 'admin5@example.com', 'pass2024'),
+(26, 'Admin Six', 'admin6@example.com', 'safePass123'),
+(27, 'Admin Seven', 'admin7@example.com', 'secureAdmin555'),
+(28, 'Admin Eight', 'admin8@example.com', 'adminStrong999'),
+(29, 'Admin Nine', 'admin9@example.com', 'passKey777'),
+(30, 'Admin Ten', 'admin10@example.com', 'adminAccess2024');
