@@ -216,6 +216,9 @@ CREATE TABLE product (
     del enum ('Y', 'N') Not Null default 'N'
 );
 
+alter table product add del enum ('Y', 'N') Not Null default 'N';
+alter table product modify approve_admin_id bigint;
+
 INSERT INTO product (product_name, seller_id, price, product_contents, picture, approve, approve_admin_id, del) VALUES
 ('1kg 쌀 소포장', 1, 3000, '소량 포장된 신선한 쌀, 1인 가구에 적합', '/images/rice_small.jpg', 'y',3,'N'),
 ('200g 한우 정육', 2, 15000, '200g 소포장 한우, 신선하고 간편한 요리에 추천', '/images/beef.jpg', 'y',7,'N'),
