@@ -7,7 +7,6 @@ CREATE TABLE order_detail (
     FOREIGN KEY (order_id) REFERENCES order_list(order_id),
     FOREIGN KEY (product_id) REFERENCES product(product_id),
     FOREIGN KEY (seller_id) REFERENCES seller(seller_id),
-    FOREIGN KEY (admin_id) REFERENCES admin(admin_id),
     quantity BIGINT NOT NULL,
     requests VARCHAR(255) NULL
 );
@@ -44,6 +43,5 @@ INSERT INTO order_detail (order_id,product_id, seller_id, quantity, requests) VA
 (18, 18, 18, 8, '깨지지 않도록 주의해주세요.'),
 (19, 19, 9, 9, NULL),
 (25, 11, 10, 0, '최대한 신선하게 부탁드립니다.');
-
 
 
