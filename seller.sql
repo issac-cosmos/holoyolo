@@ -39,7 +39,8 @@ INSERT INTO seller (name, birth, email, password) VALUES
 ('정지원', '2002-09-14', 'jiwon.jung@example.com', 'password123'),
 ('박재원', '2000-11-28', 'jaewon.park@example.com', 'password123'),
 ('한지원', '2003-10-25', 'jiwon.han@example.com', 'password123'),
-('조태희', '2004-07-14', 'taehee.jo@example.com', 'password123');
+('조태희', '2004-07-14', 'taehee.jo@example.com', 'password123'),
+('홍석영', '1997-02-17', 'tjrdud@naver.com', '1234');
 
 create table complain_complaint(
     complaint_id bigint primary key auto_increment,
