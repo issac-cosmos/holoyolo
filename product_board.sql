@@ -3,6 +3,7 @@ CREATE TABLE product (
     product_id BIGINT AUTO_INCREMENT PRIMARY KEY,
     product_name VARCHAR(255) NOT NULL,
     price BIGINT NOT NULL,
+    FOREIGN KEY seller_id REFERENCES seller(seller_id),
     product_contents VARCHAR(3000) NOT NULL,
     picture VARCHAR(3000) NOT NULL
 );
@@ -40,7 +41,8 @@ CREATE TABLE board (
     board_contents VARCHAR(3000) NOT NULL,
     created_time DATETIME NOT NULL,
     product_id BIGINT NOT NULL,
-    FOREIGN KEY (product_id) REFERENCES product(product_id)
+    FOREIGN KEY (product_id) REFERENCES product(product_id),
+    FOREIGN KEY (consumer_id) REFERENCES consumer(consumer_id)
 );
 
 -- board 데이터 삽입
