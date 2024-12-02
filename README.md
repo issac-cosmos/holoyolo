@@ -2,8 +2,8 @@
 <div align="center">
   <img src="https://github.com/user-attachments/assets/55115333-addf-42ce-ba9f-5a19095f2f5d" width="500" height="500"/>
 </div>
-<h2 align="center"> 팀명 : HOLOYOLO </h2>
-<h2 align="center"> 팀원 </h2>
+<h2> 팀명 : HOLOYOLO </h2>
+<h2> 팀원 </h2>
  
 <p align="center">
 	<img src="https://github.com/user-attachments/assets/9c254a41-64b5-4125-8bd0-c34d06287923" width="200" height="200"/>
@@ -18,7 +18,7 @@
  
 </div>
 
-<h2 align="center"> 프로젝트 소개 </h2>
+<h2> 프로젝트 소개 </h2>
 
 <span style="font-size:12px; font-weight:bold;">  Holoyolo는 1인 가구를 위한 생필품 및 식료품의 대량 구매 솔루션을 제공합니다.
 1인 가구의 공통문제점인 생필품이나 식료품등의 구매 시 소량으로 구매하는 것보다 대량으로 구매하는게 경제적일 때가 많음에도 불구하고 1인 가구의 사용량에는 너무 많아 어려움이 있는 경우가 많습니다. 혹은 소량으로 구매함에도 불구하고 1인가구의 사용량보다 너무 많을 경우도 빈번합니다.
