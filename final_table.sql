@@ -246,26 +246,27 @@ CREATE TABLE board (
     product_id BIGINT NOT NULL,
     consumer_id BIGINT NOT NULL,
     FOREIGN KEY (product_id) REFERENCES product(product_id),
-    FOREIGN KEY (consumer_id) REFERENCES consumer(consumer_id)
+    FOREIGN KEY (consumer_id) REFERENCES consumer(consumer_id),
+    del enum ('Y', 'N') Not Null default 'N'
 
 );
 
-INSERT INTO board (board_title, board_contents, created_time, product_id, consumer_id) VALUES
-('만족스러운 쌀 구매', '소포장이 정말 편리하고 신선해요. 보관하기 딱 좋습니다!', '2024-01-15 10:30:00', 1, 1),
-('신선한 한우!', '고기가 정말 부드럽고 신선합니다. 1인분씩 포장되어 너무 좋아요.', '2024-02-10 14:20:00', 2, 2),
-('깔끔한 김치 맛있어요', '포장도 깔끔하고 1인 가구에게 딱 맞는 양입니다.', '2024-03-05 09:15:00', 5, 3),
-('샐러드 최고예요', '양도 적당하고 신선해서 매번 구매하고 싶습니다.', '2024-04-22 18:00:00', 15, 4),
-('삼겹살 품질 좋아요', '고기가 신선하고 구워 먹기 딱 좋은 양이에요. 너무 맛있었어요.', '2024-05-12 20:45:00', 16, 5),
-('쌀 양이 부족해요', '1kg 포장이 조금 적은 것 같아요. 두세 끼면 없어져요.', '2024-01-25 11:10:00', 1, 6),
-('계란 품질이 아쉬워요', '계란 중 몇 개가 껍데기가 얇아서 깨졌습니다.', '2024-03-18 16:40:00', 4, 7),
-('피자가 너무 작아요', '혼자 먹기에 적당하지만 가격 대비 양이 너무 적습니다.', '2024-04-03 12:50:00', 8, 8),
-('소시지가 별로였어요', '소시지가 너무 짜고 퀄리티가 기대 이하였습니다.', '2024-05-28 15:30:00', 17, 9),
-('감자칩 양이 너무 적어요', '맛은 괜찮은데 양이 적어서 아쉬워요.', '2024-06-02 09:05:00', 20, 10),
-('쌀 사용 후기', '소포장 쌀을 써봤는데, 보관이 편하고 품질도 괜찮아요!', '2024-01-18 08:20:00', 1, 11),
-('한우 추천드립니다', '혼자 요리해서 먹기 딱 좋은 양입니다. 다음에도 구매하려고요.', '2024-03-15 19:30:00', 2, 12),
-('김치 활용 팁', '요리할 때 간편하게 꺼내 쓸 수 있어 좋아요. 찌개용으로 추천합니다.', '2024-04-05 13:25:00', 5, 13),
-('샐러드 유지 팁', '냉장 보관 시 2~3일 신선함이 유지됩니다. 드레싱 추가 추천!', '2024-05-01 09:50:00', 15, 14),
-('삼겹살 요리 후기', '혼자서 구워 먹기 좋은 양이고, 고기 질이 좋아 만족했어요.', '2024-06-15 18:40:00', 16, 15);
+INSERT INTO board (board_title, board_contents, created_time, product_id, consumer_id, del) VALUES
+('만족스러운 쌀 구매', '소포장이 정말 편리하고 신선해요. 보관하기 딱 좋습니다!', '2024-01-15 10:30:00', 1, 1,'N'),
+('신선한 한우!', '고기가 정말 부드럽고 신선합니다. 1인분씩 포장되어 너무 좋아요.', '2024-02-10 14:20:00', 2, 2,'N'),
+('깔끔한 김치 맛있어요', '포장도 깔끔하고 1인 가구에게 딱 맞는 양입니다.', '2024-03-05 09:15:00', 5, 3,'N'),
+('샐러드 최고예요', '양도 적당하고 신선해서 매번 구매하고 싶습니다.', '2024-04-22 18:00:00', 15, 4,'N'),
+('삼겹살 품질 좋아요', '고기가 신선하고 구워 먹기 딱 좋은 양이에요. 너무 맛있었어요.', '2024-05-12 20:45:00', 16, 5,'N'),
+('쌀 양이 부족해요', '1kg 포장이 조금 적은 것 같아요. 두세 끼면 없어져요.', '2024-01-25 11:10:00', 1, 6,'N'),
+('계란 품질이 아쉬워요', '계란 중 몇 개가 껍데기가 얇아서 깨졌습니다.', '2024-03-18 16:40:00', 4, 7,'N'),
+('피자가 너무 작아요', '혼자 먹기에 적당하지만 가격 대비 양이 너무 적습니다.', '2024-04-03 12:50:00', 8, 8,'N'),
+('소시지가 별로였어요', '소시지가 너무 짜고 퀄리티가 기대 이하였습니다.', '2024-05-28 15:30:00', 17, 9,'N'),
+('감자칩 양이 너무 적어요', '맛은 괜찮은데 양이 적어서 아쉬워요.', '2024-06-02 09:05:00', 20, 10,'N'),
+('쌀 사용 후기', '소포장 쌀을 써봤는데, 보관이 편하고 품질도 괜찮아요!', '2024-01-18 08:20:00', 1, 11,'N'),
+('한우 추천드립니다', '혼자 요리해서 먹기 딱 좋은 양입니다. 다음에도 구매하려고요.', '2024-03-15 19:30:00', 2, 12,'N'),
+('김치 활용 팁', '요리할 때 간편하게 꺼내 쓸 수 있어 좋아요. 찌개용으로 추천합니다.', '2024-04-05 13:25:00', 5, 13,'N'),
+('샐러드 유지 팁', '냉장 보관 시 2~3일 신선함이 유지됩니다. 드레싱 추가 추천!', '2024-05-01 09:50:00', 15, 14,'N'),
+('삼겹살 요리 후기', '혼자서 구워 먹기 좋은 양이고, 고기 질이 좋아 만족했어요.', '2024-06-15 18:40:00', 16, 15,'N');
 
 CREATE TABLE order_detail (
     order_detail_id BIGINT AUTO_INCREMENT PRIMARY KEY,
@@ -315,85 +316,131 @@ comment_id BIGINT auto_increment primary key not null,
 board_id bigint not null,
 contents varchar(3000),
 created_time datetime not null default current_timestamp(),
-FOREIGN KEY (board_id) REFERENCES board(board_id)
+FOREIGN KEY (board_id) REFERENCES board(board_id),
+del enum ('Y', 'N') Not Null default 'N'
  );
 
-INSERT INTO comment(board_id, contents) VALUES (3, "김치 저는 맛이 없던데요");
-INSERT INTO comment(board_id, contents) VALUES (7, "배송이 너무 느려요.");
-INSERT INTO comment(board_id, contents) VALUES (1, "이 제품 정말 좋네요!");
-INSERT INTO comment(board_id, contents) VALUES (12, "포장 상태가 엉망이었어요.");
-INSERT INTO comment(board_id, contents) VALUES (5, "친절한 고객 서비스에 감사드립니다.");
-INSERT INTO comment(board_id, contents) VALUES (9, "다시 구매할 의향이 없습니다.");
-INSERT INTO comment(board_id, contents) VALUES (4, "색상이 화면과 달라요.");
-INSERT INTO comment(board_id, contents) VALUES (14, "사이즈가 딱 맞아요!");
-INSERT INTO comment(board_id, contents) VALUES (6, "품질이 기대 이상이에요.");
-INSERT INTO comment(board_id, contents) VALUES (11, "제품 설명이 부족합니다.");
-INSERT INTO comment(board_id, contents) VALUES (10, "추천합니다!");
-INSERT INTO comment(board_id, contents) VALUES (15, "재구매 의향 있어요.");
-INSERT INTO comment(board_id, contents) VALUES (8, "사용법이 어려워요.");
-INSERT INTO comment(board_id, contents) VALUES (2, "디자인이 마음에 들어요.");
-INSERT INTO comment(board_id, contents) VALUES (13, "가격이 조금 비싸요.");
-INSERT INTO comment(board_id, contents) VALUES (1, "배송이 빨라서 좋았어요.");
-INSERT INTO comment(board_id, contents) VALUES (3, "다른 색상도 있었으면 좋겠어요.");
-INSERT INTO comment(board_id, contents) VALUES (7, "반품 절차가 복잡해요.");
-INSERT INTO comment(board_id, contents) VALUES (12, "지인에게 추천했어요.");
-INSERT INTO comment(board_id, contents) VALUES (5, "포장이 너무 예뻤어요.");
-INSERT INTO comment(board_id, contents) VALUES (9, "할인 기간에 사서 좋았어요.");
-INSERT INTO comment(board_id, contents) VALUES (4, "사용한 지 오래되지 않았는데 고장났어요.");
-INSERT INTO comment(board_id, contents) VALUES (14, "설명서가 너무 복잡해요.");
-INSERT INTO comment(board_id, contents) VALUES (6, "고객 서비스가 친절해요.");
-INSERT INTO comment(board_id, contents) VALUES (11, "품질 대비 가격이 비싸요.");
-INSERT INTO comment(board_id, contents) VALUES (10, "기대했던 것보다 좋아요.");
-INSERT INTO comment(board_id, contents) VALUES (15, "배송 상태가 정말 나빴어요.");
-INSERT INTO comment(board_id, contents) VALUES (8, "제품이 설명과 달라요.");
-INSERT INTO comment(board_id, contents) VALUES (2, "친구들에게 추천했어요.");
-INSERT INTO comment(board_id, contents) VALUES (13, "저는 만족스럽지 않아요.");
+INSERT INTO comment(board_id, contents) VALUES (3, "김치 저는 맛이 없던데요",'N');
+INSERT INTO comment(board_id, contents) VALUES (7, "배송이 너무 느려요.",'N');
+INSERT INTO comment(board_id, contents) VALUES (1, "이 제품 정말 좋네요!",'N');
+INSERT INTO comment(board_id, contents) VALUES (12, "포장 상태가 엉망이었어요.",'N');
+INSERT INTO comment(board_id, contents) VALUES (5, "친절한 고객 서비스에 감사드립니다.",'N');
+INSERT INTO comment(board_id, contents) VALUES (9, "다시 구매할 의향이 없습니다.",'N');
+INSERT INTO comment(board_id, contents) VALUES (4, "색상이 화면과 달라요.",'N');
+INSERT INTO comment(board_id, contents) VALUES (14, "사이즈가 딱 맞아요!",'N');
+INSERT INTO comment(board_id, contents) VALUES (6, "품질이 기대 이상이에요.",'N');
+INSERT INTO comment(board_id, contents) VALUES (11, "제품 설명이 부족합니다.",'N');
+INSERT INTO comment(board_id, contents) VALUES (10, "추천합니다!",'N');
+INSERT INTO comment(board_id, contents) VALUES (15, "재구매 의향 있어요.",'N');
+INSERT INTO comment(board_id, contents) VALUES (8, "사용법이 어려워요.",'N');
+INSERT INTO comment(board_id, contents) VALUES (2, "디자인이 마음에 들어요.",'N');
+INSERT INTO comment(board_id, contents) VALUES (13, "가격이 조금 비싸요.",'N');
+INSERT INTO comment(board_id, contents) VALUES (1, "배송이 빨라서 좋았어요.",'N');
+INSERT INTO comment(board_id, contents) VALUES (3, "다른 색상도 있었으면 좋겠어요.",'N');
+INSERT INTO comment(board_id, contents) VALUES (7, "반품 절차가 복잡해요.",'N');
+INSERT INTO comment(board_id, contents) VALUES (12, "지인에게 추천했어요.",'N');
+INSERT INTO comment(board_id, contents) VALUES (5, "포장이 너무 예뻤어요.",'N');
+INSERT INTO comment(board_id, contents) VALUES (9, "할인 기간에 사서 좋았어요.",'N');
+INSERT INTO comment(board_id, contents) VALUES (4, "사용한 지 오래되지 않았는데 고장났어요.",'N');
+INSERT INTO comment(board_id, contents) VALUES (14, "설명서가 너무 복잡해요.",'N');
+INSERT INTO comment(board_id, contents) VALUES (6, "고객 서비스가 친절해요.",'N');
+INSERT INTO comment(board_id, contents) VALUES (11, "품질 대비 가격이 비싸요.",'N');
+INSERT INTO comment(board_id, contents) VALUES (10, "기대했던 것보다 좋아요.",'N');
+INSERT INTO comment(board_id, contents) VALUES (15, "배송 상태가 정말 나빴어요.",'N');
+INSERT INTO comment(board_id, contents) VALUES (8, "제품이 설명과 달라요.",'N');
+INSERT INTO comment(board_id, contents) VALUES (2, "친구들에게 추천했어요.",'N');
+INSERT INTO comment(board_id, contents) VALUES (13, "저는 만족스럽지 않아요.",'N');
 
 create table complaint(
     complaint_id bigint primary key auto_increment,
     order_detail_id bigint not null,
-    seller_id bigint not null,
-    consumer_id bigint not null,
+    seller_id bigint null,
+    consumer_id bigint null,
     division enum("주문취소", "상품문의") default "상품문의",
     complaint_contents varchar(3000) not null,
     created_time datetime default current_timestamp,
     answer varchar(3000),
     foreign key(order_detail_id) references order_detail(order_detail_id),
     foreign key(seller_id) references seller(seller_id),
-    foreign key(consumer_id) references consumer(consumer_id)
+    foreign key(consumer_id) references consumer(consumer_id),
+    del enum ('Y', 'N') Not Null default 'N'
 );
 
   alter table complaint modify column seller_id bigint;
   alter table complaint modify column consumer_id bigint;
 
 
-INSERT INTO complaint (order_detail_id, seller_id, consumer_id, division, complaint_contents, answer) VALUES
-(10, 1, null, '상품문의', '상품이 마음에 들지 않아서 교환할 수 있나요?', '상품은 교환이 가능합니다.'),
-(4, null, 22, '주문취소', '결제 후 10분 내에 취소가 가능한가요?', '주문 취소는 발송 전까지 가능합니다.'),
-(17, 6, null, '상품문의', '이 상품의 색상 옵션을 확인하고 싶습니다.', '상품 색상 옵션은 상세 페이지에서 확인할 수 있습니다.'),
-(13, null, 28, '상품문의', '상품이 잘못 배송되었습니다. 교환할 수 있나요?', '교환은 7일 이내에 가능합니다.'),
-(2, 7, null, '주문취소', '상품을 주문했는데 취소할 수 있나요?', '주문 취소는 발송 전까지 가능합니다.'),
-(19, null, 11, '상품문의', '상품의 크기가 어떻게 되나요?', '상품 사이즈는 상세 페이지에 나와 있습니다.'),
-(9, 25, null, '상품문의', '상품이 언제 입고되나요?', '재입고 일정은 홈페이지에서 확인할 수 있습니다.'),
-(23, null, 30, '주문취소', '상품 취소 요청을 할 수 있나요?', '주문 취소는 발송 전까지 가능합니다.'),
-(11, 3, null, '상품문의', '상품의 사용법을 알려주세요.', '상품 사용법은 제품 설명서에서 확인 가능합니다.'),
-(7, null, 4, '상품문의', '상품 배송 상태를 확인하고 싶습니다.', '배송 추적 번호는 이메일로 전송됩니다.'),
-(14, 16, null, '주문취소', '이미 결제를 했는데 취소 가능한가요?', '결제 후 24시간 이내에 취소가 가능합니다.'),
-(6, null, 17, '상품문의', '이 상품은 언제 재입고되나요?', '재입고 일정은 사이트에서 확인 가능합니다.'),
-(15, 10, null, '주문취소', '주문 후 취소가 가능할까요?', '주문 취소는 발송 전까지 가능합니다.'),
-(20, null, 29, '상품문의', '이 상품의 품질 보증 기간을 확인하고 싶습니다.', '상품의 품질 보증 기간은 1년입니다.'),
-(25, 20, null, '상품문의', '상품에 대해 더 알고 싶습니다.', '상품 정보는 상세 페이지에서 확인 가능합니다.'),
-(5, null, 26, '주문취소', '배송 전에 취소를 하고 싶습니다.', '배송 전까지 취소가 가능합니다.'),
-(18, 13, null, '상품문의', '상품이 어떤 재질로 만들어졌는지 궁금합니다.', '상품 재질은 상세 페이지에 나와 있습니다.'),
-(12, null, 16, '주문취소', '주문을 취소하고 싶습니다.', '결제 후 취소는 발송 전까지 가능합니다.'),
-(8, 21, null, '상품문의', '상품이 품절인데 언제 다시 입고될까요?', '재입고 예정일은 홈페이지에서 확인 가능합니다.'),
-(24, null, 9, '상품문의', '이 상품은 한정 판매인가요?', '한정 판매가 맞습니다.'),
-(1, 24, null, '주문취소', '상품을 취소할 수 있나요?', '결제 후 취소는 발송 전까지 가능합니다.'),
-(16, null, 7, '상품문의', '이 상품의 사용법을 자세히 알고 싶습니다.', '상품 사용법은 상세 페이지에서 확인할 수 있습니다.'),
-(21, 11, null, '상품문의', '상품의 크기가 맞지 않습니다. 교환이 가능한가요?', '교환은 상품 수령 후 7일 이내에 가능합니다.'),
-(22, null, 23, '주문취소', '배송 후 주문 취소가 가능한가요?', '배송 후 취소는 불가능합니다.'),
-(3, 19, null, '상품문의', '상품의 색상 변경이 가능한가요?', '상품 색상 변경은 불가능합니다.'),
-(22, null, 1, '주문취소', '주문을 취소하고 싶은데 어떻게 하나요?', '주문 취소는 발송 전까지 가능합니다.'),
-(23, 29, null, '상품문의', '이 상품은 언제 재입고 되나요?', '재입고 일정은 홈페이지에서 확인 가능합니다.'),
-(24, null, 2, '상품문의', '상품의 가격이 변경될 예정인가요?', '상품 가격은 변경될 수 있습니다.'),
-(25, 28, null, '주문취소', '취소할 수 있는 상품이 무엇인가요?', '취소는 발송 전까지 가능합니다.');
+INSERT INTO complaint (order_detail_id, seller_id, consumer_id, division, complaint_contents, answer,'N') VALUES
+(10, 1, null, '상품문의', '상품이 마음에 들지 않아서 교환할 수 있나요?', '상품은 교환이 가능합니다.','N'),
+(4, null, 22, '주문취소', '결제 후 10분 내에 취소가 가능한가요?', '주문 취소는 발송 전까지 가능합니다.','N'),
+(17, 6, null, '상품문의', '이 상품의 색상 옵션을 확인하고 싶습니다.', '상품 색상 옵션은 상세 페이지에서 확인할 수 있습니다.','N'),
+(13, null, 28, '상품문의', '상품이 잘못 배송되었습니다. 교환할 수 있나요?', '교환은 7일 이내에 가능합니다.','N'),
+(2, 7, null, '주문취소', '상품을 주문했는데 취소할 수 있나요?', '주문 취소는 발송 전까지 가능합니다.','N'),
+(19, null, 11, '상품문의', '상품의 크기가 어떻게 되나요?', '상품 사이즈는 상세 페이지에 나와 있습니다.','N'),
+(9, 25, null, '상품문의', '상품이 언제 입고되나요?', '재입고 일정은 홈페이지에서 확인할 수 있습니다.','N'),
+(23, null, 30, '주문취소', '상품 취소 요청을 할 수 있나요?', '주문 취소는 발송 전까지 가능합니다.','N'),
+(11, 3, null, '상품문의', '상품의 사용법을 알려주세요.', '상품 사용법은 제품 설명서에서 확인 가능합니다.','N'),
+(7, null, 4, '상품문의', '상품 배송 상태를 확인하고 싶습니다.', '배송 추적 번호는 이메일로 전송됩니다.','N'),
+(14, 16, null, '주문취소', '이미 결제를 했는데 취소 가능한가요?', '결제 후 24시간 이내에 취소가 가능합니다.','N'),
+(6, null, 17, '상품문의', '이 상품은 언제 재입고되나요?', '재입고 일정은 사이트에서 확인 가능합니다.','N'),
+(15, 10, null, '주문취소', '주문 후 취소가 가능할까요?', '주문 취소는 발송 전까지 가능합니다.','N'),
+(20, null, 29, '상품문의', '이 상품의 품질 보증 기간을 확인하고 싶습니다.', '상품의 품질 보증 기간은 1년입니다.','N'),
+(25, 20, null, '상품문의', '상품에 대해 더 알고 싶습니다.', '상품 정보는 상세 페이지에서 확인 가능합니다.','N'),
+(5, null, 26, '주문취소', '배송 전에 취소를 하고 싶습니다.', '배송 전까지 취소가 가능합니다.','N'),
+(18, 13, null, '상품문의', '상품이 어떤 재질로 만들어졌는지 궁금합니다.', '상품 재질은 상세 페이지에 나와 있습니다.','N'),
+(12, null, 16, '주문취소', '주문을 취소하고 싶습니다.', '결제 후 취소는 발송 전까지 가능합니다.','N'),
+(8, 21, null, '상품문의', '상품이 품절인데 언제 다시 입고될까요?', '재입고 예정일은 홈페이지에서 확인 가능합니다.','N'),
+(24, null, 9, '상품문의', '이 상품은 한정 판매인가요?', '한정 판매가 맞습니다.','N'),
+(1, 24, null, '주문취소', '상품을 취소할 수 있나요?', '결제 후 취소는 발송 전까지 가능합니다.','N'),
+(16, null, 7, '상품문의', '이 상품의 사용법을 자세히 알고 싶습니다.', '상품 사용법은 상세 페이지에서 확인할 수 있습니다.','N'),
+(21, 11, null, '상품문의', '상품의 크기가 맞지 않습니다. 교환이 가능한가요?', '교환은 상품 수령 후 7일 이내에 가능합니다.','N'),
+(22, null, 23, '주문취소', '배송 후 주문 취소가 가능한가요?', '배송 후 취소는 불가능합니다.','N'),
+(3, 19, null, '상품문의', '상품의 색상 변경이 가능한가요?', '상품 색상 변경은 불가능합니다.','N'),
+(22, null, 1, '주문취소', '주문을 취소하고 싶은데 어떻게 하나요?', '주문 취소는 발송 전까지 가능합니다.','N'),
+(23, 29, null, '상품문의', '이 상품은 언제 재입고 되나요?', '재입고 일정은 홈페이지에서 확인 가능합니다.','N'),
+(24, null, 2, '상품문의', '상품의 가격이 변경될 예정인가요?', '상품 가격은 변경될 수 있습니다.','N'),
+(25, 28, null, '주문취소', '취소할 수 있는 상품이 무엇인가요?', '취소는 발송 전까지 가능합니다.','N');
+
+
+
+create table answer(
+answer_id BIGINT auto_increment primary key not null,
+complaint_id bigint not null,
+admin_id bigint not null,
+answer varchar(3000),
+created_time datetime not null default current_timestamp(),
+FOREIGN KEY (complaint_id) REFERENCES complaint(complaint_id),
+FOREIGN KEY (admin_id) REFERENCES admin(admin_id),
+del enum ('Y', 'N') Not Null default 'N'
+ );
+
+INSERT INTO answer(complaint_id, admin_id, answer) VALUES (1, 4, "죄송합니다, 환불해드리겠습니다.",'N');
+INSERT INTO answer(complaint_id, admin_id, answer) VALUES (2, 3, "불편을 드려 죄송합니다. 해당 문제를 바로 해결하겠습니다.",'N');
+INSERT INTO answer(complaint_id, admin_id, answer) VALUES (3, 5, "고객님의 의견을 반영하여 개선하겠습니다. 감사합니다.",'N');
+INSERT INTO answer(complaint_id, admin_id, answer) VALUES (4, 2, "문제 해결을 위해 추가 정보가 필요합니다. 고객센터로 연락 부탁드립니다.",'N');
+INSERT INTO answer(complaint_id, admin_id, answer) VALUES (5, 1, "해당 상품의 재고 문제로 불편을 드려 죄송합니다. 빠른 시일 내에 재입고하도록 하겠습니다.",'N');
+INSERT INTO answer(complaint_id, admin_id, answer) VALUES (6, 6, "고객님께서 요청하신 내용을 확인하였으며, 처리 완료되었습니다.",'N');
+INSERT INTO answer(complaint_id, admin_id, answer) VALUES (7, 7, "문의해주셔서 감사합니다. 더 나은 서비스를 위해 최선을 다하겠습니다.",'N');
+INSERT INTO answer(complaint_id, admin_id, answer) VALUES (8, 8, "해당 문제는 시스템 오류로 발생한 것으로 확인되었습니다. 다시 시도해주시기 바랍니다.",'N');
+INSERT INTO answer(complaint_id, admin_id, answer) VALUES (9, 9, "불편을 드려 죄송합니다. 관련 부서에 전달하여 개선하도록 하겠습니다.",'N');
+INSERT INTO answer(complaint_id, admin_id, answer) VALUES (10, 10, "고객님의 불편 사항을 접수하였으며, 곧 해결해드리겠습니다.",'N');
+INSERT INTO answer(complaint_id, admin_id, answer) VALUES (11, 1, "문의해주셔서 감사합니다. 해당 사항에 대해 조치 완료하였습니다.",'N');
+INSERT INTO answer(complaint_id, admin_id, answer) VALUES (12, 2, "죄송합니다, 상품 교환을 진행해드리겠습니다.",'N');
+INSERT INTO answer(complaint_id, admin_id, answer) VALUES (13, 3, "고객님의 요청에 따라 조치를 취하였습니다. 감사합니다.",'N');
+INSERT INTO answer(complaint_id, admin_id, answer) VALUES (14, 4, "해당 문제에 대해 검토 중입니다. 빠른 시일 내에 해결하겠습니다.",'N');
+INSERT INTO answer(complaint_id, admin_id, answer) VALUES (15, 5, "고객님께 불편을 끼쳐드려 죄송합니다. 서비스 개선에 반영하겠습니다.",'N');
+INSERT INTO answer(complaint_id, admin_id, answer) VALUES (16, 6, "문의 주신 사항에 대해 답변 드리겠습니다. 고객센터로 연락 주시면 자세히 안내해드리겠습니다.",'N');
+INSERT INTO answer(complaint_id, admin_id, answer) VALUES (17, 7, "고객님의 의견을 소중히 여겨 반영하도록 하겠습니다. 감사합니다.",'N');
+INSERT INTO answer(complaint_id, admin_id, answer) VALUES (18, 8, "불편을 드려 죄송합니다. 신속히 처리하겠습니다.",'N');
+INSERT INTO answer(complaint_id, admin_id, answer) VALUES (19, 9, "고객님께서 요청하신 내용을 확인하였으며, 즉시 조치하겠습니다.",'N');
+INSERT INTO answer(complaint_id, admin_id, answer) VALUES (20, 10, "해당 문제는 이미 해결되었습니다. 추가 문제가 있으시면 연락 부탁드립니다.",'N');
+INSERT INTO answer(complaint_id, admin_id, answer) VALUES (21, 1, "문의를 주셔서 감사합니다. 더 나은 서비스를 제공하기 위해 노력하겠습니다.",'N');
+INSERT INTO answer(complaint_id, admin_id, answer) VALUES (22, 2, "해당 사항에 대해 조사 중이며, 곧 답변 드리겠습니다.",'N');
+INSERT INTO answer(complaint_id, admin_id, answer) VALUES (23, 3, "고객님의 불편 사항을 확인하였으며, 빠른 시일 내에 해결하겠습니다.",'N');
+INSERT INTO answer(complaint_id, admin_id, answer) VALUES (24, 4, "문의하신 내용에 대해 답변 드리겠습니다. 고객님의 요청을 처리 중입니다.",'N');
+INSERT INTO answer(complaint_id, admin_id, answer) VALUES (25, 5, "고객님의 의견에 따라 서비스 개선을 진행하겠습니다. 감사합니다.",'N');
+INSERT INTO answer(complaint_id, admin_id, answer) VALUES (26, 6, "해당 문제는 현재 해결 중입니다. 불편을 드려 죄송합니다.",'N');
+INSERT INTO answer(complaint_id, admin_id, answer) VALUES (27, 7, "고객님의 요청에 따라 조치를 취하였습니다. 문의해주셔서 감사합니다.",'N');
+INSERT INTO answer(complaint_id, admin_id, answer) VALUES (28, 8, "불편을 드려 죄송합니다. 신속히 해결하겠습니다.",'N');
+INSERT INTO answer(complaint_id, admin_id, answer) VALUES (29, 9, "고객님의 의견을 소중히 여겨 반영하겠습니다. 감사합니다.",'N');
+INSERT INTO answer(complaint_id, admin_id, answer) VALUES (30, 10, "문제 해결을 위해 노력하겠습니다. 감사합니다.",'N');
