@@ -156,41 +156,32 @@ end
 -------- 상품수정
 
 DELIMITER //
-CREATE PROCEDURE 상품수정(
-    IN input_Pid BIGINT,              
-    IN input_Pname VARCHAR(255),      
-    IN input_Price BIGINT,            
-    IN input_Semail VARCHAR(255),    
-    IN input_Pcon VARCHAR(3000), 
-    IN input_Ppic VARCHAR(3000)      
+CREATE procedure 상품수정(
+in input_Pid bigint,
+in input_Pname varchar(255),
+in input_Price bigint,
+in input_Sid bigint,
+in input_Pcon varchar(3000),
+in input_Ppic varchar(3000)
 )
-BEGIN
+
+begin
+
     DECLARE exit HANDLER FOR SQLEXCEPTION
     BEGIN
-
+        -- 예외 발생 시 실패 메시지 출력
         SELECT '수정실패' AS message;
     END;
 
-    DECLARE seller_id BIGINT;
-    
-    SELECT seller_id INTO seller_id
-    FROM seller
-    WHERE email = input_Semail;
-    
-    IF seller_id IS NULL THEN
-        SELECT '판매자 이메일이 존재하지 않습니다.' AS message;
-        LEAVE;
-    END IF;
-    
-    UPDATE product
-    SET product_name = input_Pname, 
+    update product 
+    set product_name = input_Pname, 
         price = input_Price,
         product_contents = input_Pcon,
         picture = input_Ppic
-    WHERE product_id = input_Pid AND seller_id = seller_id;
+    where product_id = input_Pid and seller_id = input_Sid;
 
     SELECT '수정성공' AS message;
-END //
+end
 //DELIMITER ;
 
 
@@ -198,7 +189,8 @@ END //
 
 DELIMITER //
 CREATE procedure 게시글삭제(
-in input_Bid bigint
+in input_Bid bigint,
+in input_Cid bigint
 )
 
 begin
@@ -210,7 +202,7 @@ begin
 
     update board 
     set del = 'Y'
-    where board_id = input_Bid;
+    where board_id = input_Bid and consumer_id = input_Cid;
 
     SELECT '삭제성공' AS message;
 end
@@ -235,5 +227,50 @@ begin
     values(input_Bid, input_Bcon);
 
     SELECT '댓글등록성공' AS message;
+end
+//DELIMITER ;
+
+-------- 댓글수정
+
+DELIMITER //
+CREATE procedure 댓글수정(
+in input_Cid bigint,
+in input_Pass bigint,
+in input_Bcon varchar(3000)
+)
+
+begin
+    DECLARE exit HANDLER FOR SQLEXCEPTION
+    BEGIN
+        -- 예외 발생 시 실패 메시지 출력
+        SELECT '댓글수정실패' AS message;
+    END;
+
+    update comment set contents = input_Bcon
+    where comment_id = input_Cid and password = input_Pass;
+
+    SELECT '댓글수정성공' AS message;
+end
+//DELIMITER ;
+
+-------- 댓글삭제
+
+DELIMITER //
+CREATE procedure 댓글삭제(
+in input_Cid bigint,
+in input_Pass bigint
+)
+
+begin
+    DECLARE exit HANDLER FOR SQLEXCEPTION
+    BEGIN
+        -- 예외 발생 시 실패 메시지 출력
+        SELECT '댓글삭제실패' AS message;
+    END;
+
+    update comment set del = 'Y'
+    where comment_id = input_Cid and password = input_Pass;
+
+    SELECT '댓글삭제성공' AS message;
 end
 //DELIMITER ;
