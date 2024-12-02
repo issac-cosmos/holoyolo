@@ -4,11 +4,12 @@ CREATE TABLE product (
     product_name VARCHAR(255) NOT NULL,
     price BIGINT NOT NULL,
     seller_id bigint not null,
+    admin_id bigint not null,
     FOREIGN KEY (admin_id) REFERENCES admin(admin_id),
     FOREIGN KEY (seller_id) REFERENCES seller(seller_id),
     product_contents VARCHAR(3000) NOT NULL,
     picture VARCHAR(3000) NOT NULL,
-    COLUMN approve ENUM('y', 'n') NOT NULL DEFAULT 'y',
+    approve ENUM('y', 'n') NOT NULL DEFAULT 'y',
     approve_admin_id BIGINT NULL
 );
 
