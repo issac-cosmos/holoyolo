@@ -354,8 +354,8 @@ INSERT INTO comment(board_id, contents) VALUES (13, "저는 만족스럽지 않�
 create table complaint(
     complaint_id bigint primary key auto_increment,
     order_detail_id bigint not null,
-    seller_id bigint not null,
-    consumer_id bigint not null,
+    seller_id bigint null,
+    consumer_id bigint null,
     division enum("주문취소", "상품문의") default "상품문의",
     complaint_contents varchar(3000) not null,
     created_time datetime default current_timestamp,
