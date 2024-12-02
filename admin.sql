@@ -16,3 +16,16 @@ INSERT INTO admin (admin_id, name, email, password) VALUES
 (8, 'Grace Hall', 'grace.hall@example.com', 'graceSecure987'),
 (9, 'Henry Adams', 'henry.adams@example.com', 'henryPass456'),
 (10, 'Ivy Wilson', 'ivy.wilson@example.com', 'ivySecure123');
+
+-- 데이터 추가
+INSERT INTO admin (admin_id, name, email, password) VALUES
+(11, 'John Doe', 'john.doe@example.com', 'password123'),
+(12, 'Jane Smith', 'jane.smith@example.com', 'securePass1'),
+(13, 'Alice Johnson', 'alice.johnson@example.com', 'alice123'),
+(14, 'Bob Brown', 'bob.brown@example.com', 'bobSecure456'),
+(15, 'Charlie Davis', 'charlie.davis@example.com', 'charliePass789'),
+(16, 'Emily Clark', 'emily.clark@example.com', 'emilySecure321'),
+(17, 'Frank White', 'frank.white@example.com', 'frankPass654'),
+(18, 'Grace Hall', 'grace.hall@example.com', 'graceSecure987'),
+(19, 'Henry Adams', 'henry.adams@example.com', 'henryPass456'),
+(20, 'Ivy Wilson', 'ivy.wilson@example.com', 'ivySecure123');
