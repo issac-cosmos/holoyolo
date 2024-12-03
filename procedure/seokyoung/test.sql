@@ -274,3 +274,27 @@ begin
     SELECT '댓글삭제성공' AS message;
 end
 //DELIMITER ;
+
+-------- 게시글 등록
+
+DELIMITER //
+CREATE procedure 게시글등록(
+in input_Btitle varchar(255),
+in input_Bcon varchar(3000),
+in input_Pid bigint,
+in input_Cid bigint
+)
+
+begin
+    DECLARE exit HANDLER FOR SQLEXCEPTION
+    BEGIN
+        -- 예외 발생 시 실패 메시지 출력
+        SELECT '등록실패' AS message;
+    END;
+
+    insert into board(board_title, board_contents, product_id, consumer_id)
+    values(input_Btitle, input_Bcon, input_Pid, input_Cid);
+
+    SELECT '등록성공' AS message;
+end
+//DELIMITER ;
