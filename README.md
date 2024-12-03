@@ -53,7 +53,7 @@
 ## 📝 요구사항정의서
 [요구사항 정의서 바로가기](https://docs.google.com/spreadsheets/d/1I-X2Yt3x4-TamI248LvcQSrOWK3tgOYOPnZZxJbMf00/edit?gid=1715097840#gid=1715097840)<Br>
 <br>
-![222](https://github.com/user-attachments/assets/bf80eea3-d95e-4576-8e9c-9c70a9844542)
+![last 2](https://github.com/user-attachments/assets/16e54325-ad84-4ab4-af68-76d27e3feb5e)
 <br>
 <br>
 <hr>
@@ -62,7 +62,7 @@
 ## 🎨 ERD
 [ERD 바로가기](https://www.erdcloud.com/d/w3vjmKXswS97NNjpX)<Br>
 <br>
-![last 2](https://github.com/user-attachments/assets/2bfe6a41-088c-4d40-8478-3a390ee3ac4f)
+![erd-end](https://github.com/user-attachments/assets/e9ad9660-a453-4c02-a731-ef15653eab00)
 <br>
 <br>
 <hr>
