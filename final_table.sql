@@ -243,7 +243,7 @@ CREATE TABLE board (
     board_id BIGINT AUTO_INCREMENT PRIMARY KEY,
     board_title VARCHAR(255) NOT NULL,
     board_contents VARCHAR(3000) NOT NULL,
-    created_time DATETIME NOT NULL,
+    created_time DATETIME NOT NULL default current_timestamp(),
     product_id BIGINT NOT NULL,
     consumer_id BIGINT NOT NULL,
     FOREIGN KEY (product_id) REFERENCES product(product_id),
