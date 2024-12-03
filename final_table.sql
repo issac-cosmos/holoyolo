@@ -93,7 +93,8 @@ CREATE TABLE admin (
     admin_id BIGINT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
-    password VARCHAR(255) NOT NULL
+    password VARCHAR(255) NOT NULL,
+    del enum ('Y', 'N') Not Null default 'N'
 );
 
 INSERT INTO admin ( name, email, password) VALUES
